@@ -1,0 +1,75 @@
+/* Jumbotron Animation */
+
+@keyframes slideInLeft {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+@keyframes slideInRight {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+  .animated-jumbotron {
+    opacity: 0;
+    animation: slideInLeft 1s ease-in-out;
+    /* Initially set the Jumbotron to be hidden */
+    display: none;
+  }
+  #animated-jumbotron {
+    opacity: 0;
+    transform: translateY(100%);
+    transition: opacity 0.5s, transform 0.5s;
+  }
+
+  #animated-jumbotron.visible {
+    opacity: 1;
+    transform: translateY(0);
+    animation: slideInLeft 1s ease-in-out;
+}
+
+  /* Jumbotron Animation */
+
+  /* Artist Animation */
+
+#fluleft
+{
+  opacity: 0;
+  transform: translateY(100%);
+  transition: opacity 0.5s, transform 0.5s;
+}
+
+#fluleft.visible {
+  opacity: 1;
+  animation: slideInRight 1s ease-in-out;
+  transform: translateY(0); 
+}
+
+#fluright
+{
+  opacity: 0;
+  transform: translateY(100%);
+  transition: opacity 0.5s, transform 0.5s;
+}
+
+#fluright.visible {
+  opacity: 1;
+  animation: slideInLeft 1s ease-in-out;
+  transform: translateY(0); 
+}
+
+
+
+  /* Artist Animation */
+

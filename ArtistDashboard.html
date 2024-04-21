@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Artist Dashboard</title>
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
+  <!-- CSS -->
+  <link rel="stylesheet" href="script.css" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+   
+    <script>
+    
+      $(document).ready(function(){
+      var id = sessionStorage.getItem("id")
+      $("#titleshow").html('');
+      $.getJSON("http://localhost:3000/Artist", function(data){
+        $.each(data,function(key, value){
+          if(id == value.id){
+            $("#titleshow").append('<h2>'+value.Name+'</h2> <p>'+value.ArtForm+'</p>');
+            
+          }
+        })
+      })
+  
+      
+      $("#logout").click(function(){
+        sessionStorage.removeItem("id");
+        sessionStorage.clear();
+        location.href = "Home_Page.html";
+      })
+      $("#btn").click(function(){
+        var img = $("#image").val();
+        var event = $("#event").val();
+        var dnt = $("#dnt").val();
+        if(img != ""){
+          $.post("http://localhost:3000/Posts",{
+            "artistid":id,
+            Image:img,
+            Event:event,
+            DateandTime:dnt
+          },function(){
+            alert("Content Posted Successfully")
+          })
+        }
+        else{
+          alert("Please Insert Image");
+        }
+      })
+  
+      $("#photos").html('');
+      $("#aside").html('');
+      
+      $.getJSON("http://localhost:3000/Posts", function(data){
+        console.log("in getjson");
+        for(let obj of data){
+          if(id == obj.artistid){
+            var path = obj.Image;
+            var imgPath = path.replace('C:\\fakepath\\','./images/ArtImg/');
+            console.log("in if");
+            $("#photos").append(' <img src="'+imgPath+'" class=" img-fluid rounded" alt="...">')
+            $("#aside").append(`<div class="geek1">`+obj.Event+`</div> <div>`+obj.DateandTime+`</div>`)
+            localStorage.setItem("id",id)
+          }
+        }
+      })
+      $("#editbtn").click(function(){
+                  var DP = localStorage.getItem("DP");
+                  var BIO = localStorage.getItem("BIO");
+                  var NAME = localStorage.getItem("NAME");
+                  var ARTFORM = localStorage.getItem("ARTFORM");
+                  var GENDER = localStorage.getItem("GENDER");
+                  var CONTACT = localStorage.getItem("CONTACT");
+                  var EMAIL = localStorage.getItem("EMAIL");
+                  var PASSWORD = localStorage.getItem("PASSWORD");
+                  var dpimg = $("#proimage").val();
+                  var bio = $("#desc").val();
+  
+                      $.ajax({
+                          url:"http://localhost:3000/Artist/"+id,
+                          type:"PUT",
+                          dataType:"JSON",
+                          data:{
+                              Name: NAME,
+                              Gender: GENDER,
+                              ArtForm: ARTFORM,
+                              Contact: CONTACT,
+                              Password: PASSWORD,
+                              Email: EMAIL,
+                              Dp:dpimg,
+                              Desc:bio
+                          },
+                          success:function(){
+                              alert("Profile Updated Successfully...");
+                          }
+                      })
+                      
+                      
+                    })
+                    $("#profile").html('');
+                $("#proabout").html('');
+                $.getJSON("http://localhost:3000/Artist", function(dpdata){
+                    for(let obj of dpdata){
+                        if(id == obj.id){
+                            var dppath = obj.Dp;
+                            var dpimg = dppath.replace('C:\\fakepath\\','./images/ArtImg/');
+                            $("#profile").append(`<img src="`+dpimg+`" >`)
+                            $("#proabout").append(`<p class="font-italic mb-1">`+obj.Desc+`</p>`)
+                        }
+                    }
+                })
+  
+      })
+      
+    </script>
+</head>
+
+<body>
+  <div class="header__wrapper">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container-fluid">
+          <h3 style="background-image: linear-gradient(rgb(33, 28, 28),rgb(18, 15, 17)); color: linen;">
+          <b class="text-uppercase" >Artisy</b>
+          </h3>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle mx-3" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                My Profile
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#editModal">Edit Profile</a></li>
+                <li><a id="logout" class="dropdown-item" href="home.html">Logout</a></li>
+              </ul>
+            </li>
+            
+          </ul>
+         
+        </div>
+      </div>
+    </nav>
+    <div class="cols__container">
+      <div class="left__col">
+        <div class="img__container" id="profile">
+          
+          
+        </div>
+        <div id="titleshow">
+
+          
+        </div>
+        <div class="content" id="proabout">
+         
+
+          <ul>
+            <a href="http://www.twitter.com">
+            <i class="fab fa-twitter"></i></a>
+
+            <a href="http://www.youtube.com">
+            <i class="fab fa-youtube"></i></a>
+
+
+            <a href="http://www.facebook.com">
+            <i class="fab fa-facebook"></i></a>
+          </ul>
+        </div>
+      </div>
+      <div class="right__col">
+        <nav>
+          <ul>
+            <li><a href="">Performances</a></li>
+             </ul>
+          <button  type="button" data-bs-toggle="modal" data-bs-target="#postModal" >Add Post
+
+          </button>
+        </nav>
+
+
+        <div id="photos">
+    
+        </div>
+        <div>
+          <marquee class="marq" bg-color= "transparent" direction = "up" loop="" ><div class="geek2" id = "aside"></div>.</marquee>
+        </div>
+      </div>
+    </div>
+  </div>
+  <footer id="foot" class="container-fluid">
+    <p id="foot1" class="copyright"> <i class="fa fa-copyright "></i> <strong>ARTISY</strong><br>
+    Fill Your Cart With Art</p>
+  </footer>
+ 
+ 
+  
+  <div class="modal fade" id="postModal" tabindex="-1" aria-labelledby="postModal" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="postmodal">Upload Posts and Events</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          Upload Your Image<input type="file" multiple id="image" accept="image/png, image/jpg, image/jpeg, image/jfif, video/mp4"><br><br>
+          
+          <div class="mb-3">
+            <label for="Events" class="form-label">Enter Events</label>
+            <input type="text" class="form-control" id="event" placeholder="Enter Your Event">
+          </div>
+          <div class="mb-3">
+            <label for="Date and Time" class="form-label">Enter Date and Time </label>
+            <input type="datetime-local" class="form-control" id="dnt" placeholder="">
+          </div>
+        </div>
+
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary" id="btn">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal fade" id="editModal" tabindex="-1" aria-labelledby="editModal" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="postmodal">Edit profile</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          Upload Your Profile Image<input type="file" multiple id="proimage" accept="image/png, image/jpg, image/jpeg, image/jfif, video/mp4"><br><br>
+          
+          <div class="mb-3">
+            <label for="Events" class="form-label">Enter About Details</label>
+            <input type="text" class="form-control" id="desc" placeholder="Enter Your Description">
+          </div>
+          <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary" id="editbtn">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div> 
+ 
+ 
+</body>
+</html>
+    

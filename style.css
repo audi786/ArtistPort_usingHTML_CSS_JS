@@ -1,0 +1,124 @@
+body {
+  background-image: url("/images/ArtImg/background1.jpg");
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Nabla&display=swap');
+
+a {
+  text-decoration: none;
+}
+
+.artisy {
+  font-size: 25px;
+  font-weight: bold;
+  font-family: 'Nabla' cursive;
+
+}
+
+#searchresult {
+
+  position: absolute;
+  right: 10%;
+  width: 25%;
+  max-width: 700px;
+  cursor: pointer;
+  overflow-y: auto;
+  max-height: 400px;
+  box-sizing: border-box;
+  z-index: 1;
+}
+
+.lead {
+  font-size: unset;
+
+}
+
+.cent {
+  padding-right: 206px;
+
+}
+
+.carousel-control-next-icon {
+
+  background-repeat: "no-repeat";
+  transition-timing-function: 3s;
+}
+
+.prevbtn {
+
+  width: 0;
+  border: n;
+}
+
+.card-body {
+
+  padding: 0;
+}
+
+.bodyee {
+  height: 25%;
+  width: 25%;
+}
+
+.card-text {
+  text-align: center;
+
+}
+
+.img-fluid {
+  max-width: 100%;
+  height: auto;
+  border-radius: 200px;
+
+}
+
+.catego {
+  text-align: center;
+  margin-bottom: 70px;
+}
+
+img:hover {
+
+  border: 3px solid rgb(243, 8, 8);
+}
+
+.foot {
+  margin-top: 100px;
+}
+
+.fot_heig {
+
+  height: 100px;
+  padding: 25px;
+  margin-top: 350px;
+}
+
+.align {
+  text-align: center;
+}
+
+.pad {
+  margin-top: 130px;
+}
+
+.cards-wrapper {
+  grid-column: center-start / -1;
+  display: grid;
+  grid-auto-flow: column;
+  gap: 1rem;
+  overflow: auto;
+  padding-bottom: 1rem;
+  padding-right: var(--page-margin);
+}
+
+.card {
+  display: grid;
+  place-content: center;
+  background-color: #d0f0ee;
+  color: #15928A;
+  font-size: 1.5rem;
+  height: 20rem;
+  min-width: 13rem;
+}
+
+

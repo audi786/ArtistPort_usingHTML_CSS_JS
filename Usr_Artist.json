@@ -1,0 +1,302 @@
+{
+  "User": [
+    {
+      "name": "aditya",
+      "Contact no": "9309549061",
+      "addr": "qwertyujhfsa",
+      "Profession": "Developer",
+      "Email": "adi@gmail.com",
+      "Password": "pass1234",
+      "Confirm Password": "pass1234",
+      "id": 1
+    },
+
+    {
+      "name": "abhay pach",
+      "Contact no": "8421078212",
+      "addr": "near wardha",
+      "Profession": "joke",
+      "Email": "pac@gmail.com",
+      "Password": "user1234",
+      "Confirm Password": "user1234",
+      "id": 2
+    },
+
+    {
+      "name": "sinchan patil",
+      "Contact no": "9864325711",
+      "addr": "popyute",
+      "Profession": "dance",
+      "Email": "sinc@cyb.com",
+      "Password": "user1234",
+      "Confirm Password": "user1234",
+      "id": 3
+    },
+
+    {
+      "name": "chetan mahajan",
+      "Contact no": "8866542343",
+      "addr": "sadfasd",
+      "Profession": "Developer",
+      "Email": "maha@gmail.com",
+      "Password": "pass1234",
+      "Confirm Password": "pass1234",
+      "id": 4
+    },
+
+    {
+      "name": "kshtij",
+      "Contact no": "7865998790",
+      "addr": "Ojsahus",
+      "Profession": "Developer",
+      "Email": "ks@gmail.com",
+      "Password": "pass1234",
+      "Confirm Password": "pass1234",
+      "id": 5
+    },
+
+    {
+      "name": "Atharva Jadhav",
+      "Contact no": "9087658970",
+      "addr": "Plot K-7",
+      "Profession": "Developer",
+      "Email": "jadhav@gmail.com",
+      "Password": "pass1234",
+      "Confirm Password": "pass1234",
+      "id": 6
+    },
+
+    {
+      "name": "Yash Mire",
+      "Contact no": "8421078266",
+      "addr": "Ambazari",
+      "Profession": "Developer",
+      "Email": "yash@gmail.com",
+      "Password": "pass@123",
+      "Confirm Password": "pass@123",
+      "id": 7
+    },
+
+    {
+      "name": "dhash",
+      "Contact no": "9632587412",
+      "addr": "asdfqwertg",
+      "Profession": "Developer",
+      "Email": "dhas@cybage.com",
+      "Password": "123456",
+      "Confirm Password": "123456",
+      "id": 8
+    }
+  ],
+  "Artist": [
+    {
+      "Name": "Rajesh Vaidya",
+      "Gender": "Male",
+      "Artform": "undefined",
+      "Contact": "1234567890",
+      "Password": "pass123",
+      "Email": "vaidya@gmail.com",
+      "Dp": "C:\\fakepath\\aishwarya kale.jpg",
+      "Desc": "2lkh",
+      "id": 1
+    },
+    {
+      "Name": "Bharti Kher",
+      "Gender": "female",
+      "Artform": "undefined",
+      "Contact": "1234567890",
+      "Password": "pass123",
+      "Email": "kher@gmail.com",
+      "Dp": "C:\\fakepath\\bharti kher.jpg",
+      "Desc": "my name is bharti , i am Dancer",
+      "id": 3
+    },
+    {
+      "Name": "Raja Rancho",
+      "ArtForm": "Puppet Show",
+      "Gender": "Male",
+      "Contact": "123456890",
+      "Email": "raja@gmail.com",
+      "Password": "pass123",
+      "confirm Password": "pass123",
+      "id": 4
+    },
+    {
+      "name": "abhay pachpande",
+      "Contact": "1234567890",
+      "ArtForm": "joke",
+      "Gender": "Male",
+      "Email": "abhay@gmail.com",
+      "Password": "pass123",
+      "Confirm Password": "pass123",
+      "id": 5
+    },
+
+
+    {
+      "Name": "saundarya",
+      "Gender": "female",
+      "ArtForm": "Music",
+      "Contact": "5641651635",
+      "Password": "pass123",
+      "Email": "saun@gmail.com",
+      "Dp": "C:\\fakepath\\anurupa-roy_1.jpg",
+      "Desc": "Music",
+      "id": 10
+    },
+    {
+      "Name": "Honey Singh",
+      "Gender": "Male",
+      "ArtForm": "Singer",
+      "Contact": "9890658532",
+      "Password": "pass123",
+      "Email": "singh@gmail.com",
+      "Dp": "C:\\fakepath\\ravi-kattakuri.jpg",
+      "Desc": "I am singer",
+      "id": 11
+    },
+    {
+      "Name": "Rajesh Malode",
+      "Gender": "Male",
+      "ArtForm": "Dane",
+      "Contact": "9809768907",
+      "Password": "pass123",
+      "Email": "mal@gmail.com",
+      "Dp": "C:\\fakepath\\anindo chaterjee.jpg",
+      "Desc": "Tabla",
+      "id": 12
+    },
+    {
+      "Name": "Kartik Mire",
+      "Gender": "Male",
+      "ArtForm": "Music",
+      "Contact": "9921689561",
+      "Password": "pass@123",
+      "Email": "mire@gmail.com",
+      "Dp": "C:\\fakepath\\anindo chaterjee.jpg",
+      "Desc": "I am musician",
+      "id": 13
+    }
+  ],
+  "Posts": [
+    {
+      "artistid": "1",
+      "Image": "C:\\fakepath\\anindo chaterjee.jpg",
+      "Event": "ad",
+      "DateandTime": "2022-10-21T15:52",
+      "id": 2
+    },
+    {
+      "artistid": "1",
+      "Image": "C:\\fakepath\\alarmel.jpg",
+      "Event": "sa",
+      "DateandTime": "2022-10-20T15:53",
+      "id": 3
+    },
+    {
+      "artistid": "1",
+      "Image": "C:\\fakepath\\aishwarya kale.jpg",
+      "Event": "d",
+      "DateandTime": "2022-10-26T15:58",
+      "id": 4
+    },
+    {
+      "artistid": "1",
+      "Image": "C:\\fakepath\\rajesh vaidya.png",
+      "Event": "uty",
+      "DateandTime": "2022-10-26T16:10",
+      "id": 5
+    },
+    {
+      "artistid": "1",
+      "Image": "C:\\fakepath\\rajesh vaidya.png",
+      "Event": "asd",
+      "DateandTime": "2022-10-24T16:12",
+      "id": 6
+    },
+    {
+      "artistid": "1",
+      "Image": "C:\\fakepath\\bgimg.jpg",
+      "Event": "sda",
+      "DateandTime": "2022-10-14T16:24",
+      "id": 7
+    },
+    {
+      "artistid": "6",
+      "Image": "C:\\fakepath\\karim-manjra-cW3nDFVpi10-unsplash.jpg",
+      "Event": "das",
+      "DateandTime": "",
+      "id": 8
+    },
+    {
+      "artistid": "6",
+      "Image": "C:\\fakepath\\voilion.jpg",
+      "Event": "ads",
+      "DateandTime": "",
+      "id": 9
+    },
+    {
+      "artistid": "3",
+      "Image": "C:\\fakepath\\karim-manjra-cW3nDFVpi10-unsplash.jpg",
+      "Event": "",
+      "DateandTime": "2022-10-20T17:20",
+      "id": 10
+    },
+    {
+      "artistid": "1",
+      "Image": "C:\\fakepath\\india_im_8.png",
+      "Event": "Competiton US",
+      "DateandTime": "2022-10-12T17:35",
+      "id": 11
+    },
+    {
+      "artistid": "7",
+      "Image": "C:\\fakepath\\background1.jpg",
+      "Event": "delhi program",
+      "DateandTime": "2022-10-24T18:16",
+      "id": 12
+    },
+    {
+      "artistid": "3",
+      "Image": "C:\\fakepath\\bgimg.jpg",
+      "Event": "Gujrat Program",
+      "DateandTime": "2022-10-29T18:26",
+      "id": 13
+    },
+    {
+      "artistid": "11",
+      "Image": "C:\\fakepath\\alarmel1.jpg",
+      "Event": "Tamil Program",
+      "DateandTime": "2022-10-02T10:08",
+      "id": 14
+    },
+    {
+      "artistid": "12",
+      "Image": "C:\\fakepath\\anna-kolosyuk-D5nh6mCW52c-unsplash.jpg",
+      "Event": "delhi competion",
+      "DateandTime": "2022-10-19T11:15",
+      "id": 15
+    },
+    {
+      "artistid": "12",
+      "Image": "C:\\fakepath\\alarmel1.jpg",
+      "Event": "ui",
+      "DateandTime": "2022-10-13T11:17",
+      "id": 16
+    },
+    {
+      "artistid": "13",
+      "Image": "C:\\fakepath\\background1.jpg",
+      "Event": "@42",
+      "DateandTime": "2022-10-28T11:10",
+      "id": 17
+    },
+    {
+      "artistid": "13",
+      "Image": "C:\\fakepath\\anurupa-roy_1.jpg",
+      "Event": "",
+      "DateandTime": "",
+      "id": 18
+    }
+  ]
+}
